@@ -1,0 +1,36 @@
+$ git commit -m chore: project scaffolding (npm, tsconfig, eslint, prettier, husky, commitlint, scripts)
+
+> software-construction-workshop-2@0.0.0 lint
+> eslint . --ext .ts
+
+
+> software-construction-workshop-2@0.0.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> software-construction-workshop-2@0.0.0 typecheck
+> tsc --noEmit
+
+[main (root-commit) 7159928] chore: project scaffolding (npm, tsconfig, eslint, prettier, husky, commitlint, scripts)
+ 16 files changed, 4523 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100755 .husky/commit-msg
+ create mode 100755 .husky/pre-commit
+ create mode 100644 .npmrc
+ create mode 100644 .prettierignore
+ create mode 100644 .prettierrc.cjs
+ create mode 100644 README.md
+ create mode 100644 commitlint.config.cjs
+ create mode 100644 docs/verification/00-scaffolding.log
+ create mode 100644 eslint.config.cjs
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 src/demo.ts
+ create mode 100644 src/index.ts
+ create mode 100644 tsconfig.json
+ create mode 100644 tsup.config.ts
+
+exit code: 0
+

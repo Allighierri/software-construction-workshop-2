@@ -1,0 +1,38 @@
+$ npm run typecheck
+
+> software-construction-workshop-2@0.0.0 typecheck
+> tsc --noEmit
+
+
+exit code: 0
+
+$ npm run lint
+
+> software-construction-workshop-2@0.0.0 lint
+> eslint . --ext .ts
+
+
+/Volumes/SSDeeznuts/Конструювання програмного забезпечення/software-construction-workshop-2/src/demo.ts
+  4:7  error  'unused' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+/Volumes/SSDeeznuts/Конструювання програмного забезпечення/software-construction-workshop-2/src/index.ts
+   6:24  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   6:32  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  10:31  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 4 problems (1 error, 3 warnings)
+
+
+exit code: 1
+
+$ npm run format:check
+
+> software-construction-workshop-2@0.0.0 format:check
+> prettier --check .
+
+Checking formatting...
+[warn] src/demo.ts
+[warn] Code style issues found in the above file. Run Prettier with --write to fix.
+
+exit code: 1
+

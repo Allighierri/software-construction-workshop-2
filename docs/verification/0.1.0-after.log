@@ -1,0 +1,106 @@
+$ npm run lint:fix
+
+> software-construction-workshop-2@0.0.0 lint:fix
+> eslint . --ext .ts --fix
+
+
+/Volumes/SSDeeznuts/Конструювання програмного забезпечення/software-construction-workshop-2/src/index.ts
+   6:24  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   6:32  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  10:31  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 3 problems (0 errors, 3 warnings)
+
+
+exit code: 0
+
+$ npm run format
+
+> software-construction-workshop-2@0.0.0 format
+> prettier --write .
+
+.prettierrc.cjs 12ms (unchanged)
+commitlint.config.cjs 2ms (unchanged)
+eslint.config.cjs 3ms (unchanged)
+package.json 2ms (unchanged)
+README.md 21ms (unchanged)
+src/demo.ts 15ms (unchanged)
+src/index.ts 7ms (unchanged)
+tsconfig.json 1ms (unchanged)
+tsup.config.ts 2ms (unchanged)
+
+exit code: 0
+
+$ npm run typecheck
+
+> software-construction-workshop-2@0.0.0 typecheck
+> tsc --noEmit
+
+
+exit code: 0
+
+$ npm run lint
+
+> software-construction-workshop-2@0.0.0 lint
+> eslint . --ext .ts
+
+
+/Volumes/SSDeeznuts/Конструювання програмного забезпечення/software-construction-workshop-2/src/index.ts
+   6:24  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   6:32  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  10:31  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 3 problems (0 errors, 3 warnings)
+
+
+exit code: 0
+
+$ npm run format:check
+
+> software-construction-workshop-2@0.0.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+exit code: 0
+
+$ npm run demo
+
+> software-construction-workshop-2@0.0.0 demo
+> tsx src/demo.ts
+
+node:net:2145
+      const error = new UVExceptionWithHostPort(rval, 'listen', address, port);
+                    ^
+
+Error: listen EPERM: operation not permitted /var/folders/gr/vgjtjqxs1jsbj83jgq5kcwnw0000gn/T/tsx-501/3483.pipe
+    at Server.setupListenHandle [as _listen2] (node:net:2145:21)
+    at listenInCluster (node:net:2224:12)
+    at Server.listen (node:net:2361:5)
+    at file:///Volumes/SSDeeznuts/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%B1%D0%B5%D0%B7%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%BD%D1%8F/software-construction-workshop-2/node_modules/tsx/dist/cli.mjs:53:32174
+    at new Promise (<anonymous>)
+    at createIpcServer (file:///Volumes/SSDeeznuts/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%B1%D0%B5%D0%B7%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%BD%D1%8F/software-construction-workshop-2/node_modules/tsx/dist/cli.mjs:53:32152)
+    at async file:///Volumes/SSDeeznuts/%D0%9A%D0%BE%D0%BD%D1%81%D1%82%D1%80%D1%83%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%20%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B7%D0%B0%D0%B1%D0%B5%D0%B7%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%BD%D1%8F/software-construction-workshop-2/node_modules/tsx/dist/cli.mjs:55:542 {
+  code: 'EPERM',
+  errno: -1,
+  syscall: 'listen',
+  address: '/var/folders/gr/vgjtjqxs1jsbj83jgq5kcwnw0000gn/T/tsx-501/3483.pipe',
+  port: -1
+}
+
+Node.js v24.19.0
+
+exit code: 1
+
+$ npm run demo
+
+> software-construction-workshop-2@0.0.0 demo
+> tsx src/demo.ts
+
+◇ injected env (0) from .env
+sum(any): 5
+capitalize(any): Hello
+
+exit code: 0
+
