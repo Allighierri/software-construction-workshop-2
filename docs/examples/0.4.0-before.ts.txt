@@ -9,4 +9,4 @@ const users: User[] = [
   { id: 2, name: 'Bob' },
 ];
 
-console.log('group ok:', groupBy(users, 'name'));
+console.log('group ok:', groupBy(users, 'age'));

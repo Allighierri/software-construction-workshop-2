@@ -19,3 +19,20 @@ export function formatNumber(value: number, options?: NumberFormatOptions): stri
   const precision = options?.precision ?? Number(process.env.APP_PRECISION ?? 2);
   return value.toFixed(precision);
 }
+
+export interface User {
+  id: number;
+  name: string;
+}
+
+export function groupBy<T>(arr: T[], key: keyof T): Record<string, T[]> {
+  return arr.reduce(
+    (acc, item) => {
+      const group = String(item[key]);
+      const bucket = (acc[group] ??= []);
+      bucket.push(item);
+      return acc;
+    },
+    Object.create(null) as Record<string, T[]>,
+  );
+}
