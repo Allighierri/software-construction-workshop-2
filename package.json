@@ -2,7 +2,7 @@
   "name": "software-construction-workshop-2",
   "version": "0.5.0",
   "description": "TypeScript utility library for practical workshop 2",
-  "main": "src/index.ts",
+  "main": "dist/index.cjs",
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "eslint . --ext .ts",
@@ -49,5 +49,17 @@
   "private": true,
   "engines": {
     "node": ">=20"
-  }
+  },
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ]
 }

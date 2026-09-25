@@ -1,5 +1,5 @@
 import { add, capitalize, formatNumber, groupBy, Logger, type User } from './index';
-import { config } from './config';
+import { config } from './index';
 
 console.log('sum(typed):', add(2, 3));
 console.log('capitalize(typed):', capitalize('hello'));
