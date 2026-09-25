@@ -1,0 +1,27 @@
+$ npm run typecheck
+
+> software-construction-workshop-2@0.2.0 typecheck
+> tsc --noEmit
+
+src/demo.ts(5,41): error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+
+exit code: 2
+
+$ npm run lint
+
+> software-construction-workshop-2@0.2.0 lint
+> eslint . --ext .ts
+
+
+exit code: 0
+
+$ npm run format:check
+
+> software-construction-workshop-2@0.2.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+exit code: 0
+

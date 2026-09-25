@@ -1,0 +1,63 @@
+$ npm run lint:fix
+
+> software-construction-workshop-2@0.2.0 lint:fix
+> eslint . --ext .ts --fix
+
+
+exit code: 0
+
+$ npm run format
+
+> software-construction-workshop-2@0.2.0 format
+> prettier --write .
+
+.prettierrc.cjs 12ms (unchanged)
+commitlint.config.cjs 1ms (unchanged)
+eslint.config.cjs 3ms (unchanged)
+package.json 2ms (unchanged)
+README.md 20ms (unchanged)
+src/demo.ts 15ms (unchanged)
+src/index.ts 6ms (unchanged)
+tsconfig.json 1ms (unchanged)
+tsup.config.ts 2ms (unchanged)
+
+exit code: 0
+
+$ npm run typecheck
+
+> software-construction-workshop-2@0.2.0 typecheck
+> tsc --noEmit
+
+
+exit code: 0
+
+$ npm run lint
+
+> software-construction-workshop-2@0.2.0 lint
+> eslint . --ext .ts
+
+
+exit code: 0
+
+$ npm run format:check
+
+> software-construction-workshop-2@0.2.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+exit code: 0
+
+$ npm run demo
+
+> software-construction-workshop-2@0.2.0 demo
+> tsx src/demo.ts
+
+◇ injected env (0) from .env
+sum(typed): 5
+capitalize(typed): Hello
+format(ok): 123.46
+
+exit code: 0
+
