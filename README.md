@@ -1,0 +1,38 @@
+# Практична робота №2
+
+Навчальна TypeScript-бібліотека: npm, SemVer, типи, інтерфейси, generics,
+класи, змінні оточення та автоматичні перевірки.
+
+## Запуск
+
+Потрібні Node.js 20+ та npm. Після клонування:
+
+```sh
+npm i
+npm run typecheck
+npm run lint
+npm run format:check
+npm run demo
+npm run build
+```
+
+`dotenv`, `zod` — робочі залежності. Компілятор, збирач, ESLint, Prettier,
+Husky, Commitlint, `tsx` та декларації Node.js — залежності розробки.
+
+## Крок 1 — каркас (0.0.0)
+
+Створено приватний репозиторій на GitHub і виконано його клонування.
+`npm init` виконано інтерактивно, без `-y`: версія 0.0.0, автор Allighierri,
+ліцензія UNLICENSED. Налаштовано TypeScript, ESLint 9, Prettier та Husky.
+`pre-commit` запускає lint, format:check і typecheck; `commit-msg` перевіряє
+Conventional Commits. `.npmrc` задає повідомлення релізу `chore: release v%s`.
+
+TypeScript використовує ESNext/Bundler, оскільки бібліотеку збирає tsup.
+Конфігурація tsup явно задає розширення `.cjs` і `.mjs`, щоб вони збігалися
+з майбутніми полями exports. Згенерований dist виключено з ESLint і Prettier.
+Для TypeScript застосовано правило невикористаних змінних із TS-плагіна,
+щоб базове JS-правило не дублювало діагностику.
+
+Результати команд зберігаються в `docs/verification/`; навмисно помилкові
+приклади — у `docs/examples/` як текстові знімки. Перед кожним релізом
+`src/demo.ts` виправляється, і повторні перевірки мають завершитися успішно.
