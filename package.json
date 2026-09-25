@@ -11,7 +11,8 @@
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
     "demo": "tsx src/demo.ts",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "npm run build && node --test tests/smoke.cjs"
   },
   "repository": {
     "type": "git",

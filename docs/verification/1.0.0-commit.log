@@ -1,0 +1,22 @@
+$ git commit -m chore: stabilize public API; forbid any; add package exports
+
+> software-construction-workshop-2@0.5.0 lint
+> eslint . --ext .ts
+
+
+> software-construction-workshop-2@0.5.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> software-construction-workshop-2@0.5.0 typecheck
+> tsc --noEmit
+
+[main 3fed7ea] chore: stabilize public API; forbid any; add package exports
+ 7 files changed, 117 insertions(+), 4 deletions(-)
+ create mode 100644 docs/verification/1.0.0-after.log
+ create mode 100644 docs/verification/1.0.0-build.log
+
+exit code: 0
+

@@ -1,0 +1,45 @@
+$ npm test
+
+> software-construction-workshop-2@1.0.0 test
+> npm run build && node --test tests/smoke.cjs
+
+
+> software-construction-workshop-2@1.0.0 build
+> tsup src/index.ts --format cjs,esm --dts
+
+CLI Building entry: src/index.ts
+CLI Using tsconfig: tsconfig.json
+CLI tsup v8.5.1
+CLI Using tsup config: /Volumes/SSDeeznuts/Конструювання програмного забезпечення/software-construction-workshop-2/tsup.config.ts
+CLI Target: es2022
+CLI Cleaning output folder
+CJS Build start
+ESM Build start
+ESM dist/index.mjs 1.18 KB
+ESM ⚡️ Build success in 6ms
+CJS dist/index.cjs 2.93 KB
+CJS ⚡️ Build success in 6ms
+DTS Build start
+DTS ⚡️ Build success in 531ms
+DTS dist/index.d.ts  1.08 KB
+DTS dist/index.d.mts 1.08 KB
+◇ injected env (0) from .env
+◇ injected env (0) from .env
+✔ CJS exports and utility edge cases (1.303875ms)
+✔ ESM public package import (48.543291ms)
+✔ groupBy preserves groups, order, and prototype-like keys (0.463583ms)
+✔ Logger respects silent, info, and debug levels (0.118083ms)
+✔ configuration defaults without a .env file (66.788875ms)
+✔ valid precision boundaries and log levels (387.186958ms)
+✔ zod rejects invalid environment values (327.613667ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 937.147083
+
+exit code: 0
+

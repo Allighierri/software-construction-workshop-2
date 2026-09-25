@@ -1,0 +1,25 @@
+$ git commit -m feat: add Logger and env config via zod
+
+> software-construction-workshop-2@0.4.0 lint
+> eslint . --ext .ts
+
+
+> software-construction-workshop-2@0.4.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> software-construction-workshop-2@0.4.0 typecheck
+> tsc --noEmit
+
+[main bf815b5] feat: add Logger and env config via zod
+ 8 files changed, 161 insertions(+), 6 deletions(-)
+ create mode 100644 .env.example
+ create mode 100644 docs/examples/0.5.0-before.ts.txt
+ create mode 100644 docs/verification/0.5.0-after.log
+ create mode 100644 docs/verification/0.5.0-before.log
+ create mode 100644 src/config.ts
+
+exit code: 0
+

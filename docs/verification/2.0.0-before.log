@@ -1,0 +1,27 @@
+$ npm run typecheck
+
+> software-construction-workshop-2@1.0.0 typecheck
+> tsc --noEmit
+
+src/demo.ts(4,35): error TS2554: Expected 1 arguments, but got 2.
+
+exit code: 2
+
+$ npm run lint
+
+> software-construction-workshop-2@1.0.0 lint
+> eslint . --ext .ts
+
+
+exit code: 0
+
+$ npm run format:check
+
+> software-construction-workshop-2@1.0.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+exit code: 0
+

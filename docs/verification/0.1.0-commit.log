@@ -1,0 +1,32 @@
+$ git commit -m feat: basic utils with any (add, capitalize)
+
+> software-construction-workshop-2@0.0.0 lint
+> eslint . --ext .ts
+
+
+/Volumes/SSDeeznuts/Конструювання програмного забезпечення/software-construction-workshop-2/src/index.ts
+   6:24  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   6:32  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  10:31  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 3 problems (0 errors, 3 warnings)
+
+
+> software-construction-workshop-2@0.0.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> software-construction-workshop-2@0.0.0 typecheck
+> tsc --noEmit
+
+[main 1d88e04] feat: basic utils with any (add, capitalize)
+ 7 files changed, 205 insertions(+), 2 deletions(-)
+ create mode 100644 docs/examples/0.1.0-before.ts.txt
+ create mode 100644 docs/verification/0.1.0-after.log
+ create mode 100644 docs/verification/0.1.0-before.log
+ create mode 100644 docs/verification/00-scaffolding-commit.log
+
+exit code: 0
+

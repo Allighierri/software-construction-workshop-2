@@ -60,3 +60,99 @@ TypeScript використовує ESNext/Bundler, оскільки біблі�
 ## 1.0.0
 
 Стабілізовано єдину точку входу src/index.ts, зокрема config і Config; any заборонено. Додано main/module/types/exports. Збірка створює CJS, ESM та декларації. MAJOR: перший стабільний контракт. Самоімпорти з ./index із методички не потрібні: оголошення вже експортовані.
+
+## Приклади API 2.0.0
+
+```ts
+import {
+  add,
+  capitalize,
+  formatNumber,
+  groupBy,
+  Logger,
+  config,
+  type User,
+} from 'software-construction-workshop-2';
+
+add([2, 3, 4]); // 9; до 2.0.0: add(2, 3)
+capitalize('hello'); // 'Hello'
+formatNumber(123.456, { precision: 2 }); // '123.46'
+const users: User[] = [
+  { id: 1, name: 'Alice' },
+  { id: 2, name: 'Alice' },
+];
+groupBy(users, 'name'); // { Alice: [обидва користувачі] }
+const logger = new Logger(config.LOG_LEVEL);
+logger.info('Application started');
+logger.debug('Extra debug info');
+```
+
+Публічні функції, класи, конфігурація й типи доступні лише через кореневий
+експорт пакета. `src/demo.ts` також використовує цю точку входу.
+
+## Змінні оточення
+
+```sh
+cp .env.example .env
+npm run demo
+```
+
+| Ключ          | Дозволені значення  | За замовчуванням | У локальному .env |
+| ------------- | ------------------- | ---------------- | ----------------- |
+| APP_PRECISION | ціле число 0–10     | 2                | 3                 |
+| LOG_LEVEL     | silent, info, debug | info             | debug             |
+
+`zod` перевіряє конфігурацію під час завантаження модуля. Некоректні значення
+зупиняють програму з помилкою валідації. За відсутності .env діють стандартні
+значення. Уже задані змінні процесу мають пріоритет над .env.
+`silent` вимикає Logger, `info` друкує лише info, `debug` — обидва рівні.
+Точність у параметрі `formatNumber` має пріоритет над APP_PRECISION;
+вона підпорядковується обмеженням `Number.toFixed` (ціле число 0–100).
+`.env` виключено з Git; `.env.example` містить лише навчальні значення.
+
+## Релізи та докази виконання
+
+- [v0.1.0](https://github.com/Allighierri/software-construction-workshop-2/tree/v0.1.0)
+- [v0.2.0](https://github.com/Allighierri/software-construction-workshop-2/tree/v0.2.0)
+- [v0.3.0](https://github.com/Allighierri/software-construction-workshop-2/tree/v0.3.0)
+- [v0.4.0](https://github.com/Allighierri/software-construction-workshop-2/tree/v0.4.0)
+- [v0.5.0](https://github.com/Allighierri/software-construction-workshop-2/tree/v0.5.0)
+- [v1.0.0](https://github.com/Allighierri/software-construction-workshop-2/tree/v1.0.0)
+- [v2.0.0](https://github.com/Allighierri/software-construction-workshop-2/tree/v2.0.0)
+
+Релізи створено послідовними `npm version minor` / `npm version major`,
+із push `--follow-tags`. Кожний тег є анотованим Git-тегом.
+Додаткове створення GitHub Releases для цієї роботи не потрібне.
+
+- `docs/examples/*-before.ts.txt` — точний знімок неправильного demo перед виправленням.
+- `docs/verification/*-before.log` — реальна діагностика typecheck/lint/format.
+- `docs/verification/*-after.log` — успішні повторні перевірки та demo.
+- `docs/verification/00-scaffolding-commit.log` — робота Husky на першому коміті.
+- `docs/verification/*-commit.log` — перевірки під час наступних комітів.
+- `docs/verification/final.log` — фінальна збірка, перевірки, тестування API та .env.
+
+Навмисні помилки виникали саме в `src/demo.ts`. Знімки збережені як `.txt`,
+щоб фінальний проєкт компілювався. У логах 0.1.0 також зафіксовано обмеження
+середовища запуску (`EPERM` для IPC tsx) і наступний успішний запуск.
+
+## Відтворення перевірок
+
+```sh
+npm ci
+npm run typecheck
+npm run lint
+npm run format:check
+npm run demo
+npm test
+git log --oneline --decorate
+git tag --list
+git check-ignore .env
+```
+
+`npm test` спочатку збирає пакет, потім перевіряє реальні CJS/ESM exports,
+поведінку функцій і Logger, валідну та невалідну конфігурацію в окремих процесах.
+Команди не потребують глобальних TypeScript, ESLint або tsx.
+
+## 2.0.0
+
+Breaking change: add(a, b) замінено на add(values: number[]). Старий виклик дає TS2554, новий add([2, 3, 4]) повертає 9; порожній масив дає 0. MAJOR: порушено сумісність сигнатури.

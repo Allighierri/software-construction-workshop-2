@@ -1,0 +1,71 @@
+$ npm run lint:fix
+
+> software-construction-workshop-2@1.0.0 lint:fix
+> eslint . --ext .ts --fix
+
+
+exit code: 0
+
+$ npm run format
+
+> software-construction-workshop-2@1.0.0 format
+> prettier --write .
+
+.prettierrc.cjs 11ms (unchanged)
+commitlint.config.cjs 1ms (unchanged)
+eslint.config.cjs 3ms (unchanged)
+package.json 2ms (unchanged)
+README.md 55ms (unchanged)
+src/config.ts 5ms (unchanged)
+src/demo.ts 3ms (unchanged)
+src/index.ts 9ms (unchanged)
+tests/smoke.cjs 11ms (unchanged)
+tsconfig.json 1ms (unchanged)
+tsup.config.ts 2ms (unchanged)
+
+exit code: 0
+
+$ npm run typecheck
+
+> software-construction-workshop-2@1.0.0 typecheck
+> tsc --noEmit
+
+
+exit code: 0
+
+$ npm run lint
+
+> software-construction-workshop-2@1.0.0 lint
+> eslint . --ext .ts
+
+
+exit code: 0
+
+$ npm run format:check
+
+> software-construction-workshop-2@1.0.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+exit code: 0
+
+$ npm run demo
+
+> software-construction-workshop-2@1.0.0 demo
+> tsx src/demo.ts
+
+◇ injected env (2) from .env
+sum(2.0 ok): 9
+capitalize(typed): Hello
+format(ok): 123.456
+group ok: [Object: null prototype] {
+  Alice: [ { id: 1, name: 'Alice' } ],
+  Bob: [ { id: 2, name: 'Bob' } ]
+}
+[INFO] Application started
+[DEBUG] Extra debug info
+
+exit code: 0
+
