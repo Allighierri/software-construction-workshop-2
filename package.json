@@ -1,6 +1,6 @@
 {
   "name": "software-construction-workshop-2",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "TypeScript utility library for practical workshop 2",
   "main": "dist/index.cjs",
   "scripts": {
