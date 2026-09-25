@@ -12,6 +12,7 @@ const users: User[] = [
 
 console.log('group ok:', groupBy(users, 'name'));
 
-const logger = new Logger(config.LOG_LEVEL);
+console.log('validated log level:', config.LOG_LEVEL);
+const logger = new Logger('verbose');
 logger.info('Application started');
 logger.debug('Extra debug info');

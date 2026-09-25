@@ -52,3 +52,7 @@ TypeScript використовує ESNext/Bundler, оскільки біблі�
 ## 0.4.0
 
 Додано User і groupBy<T> з keyof T. Ключ age відхиляється, name приймається. MINOR: нова можливість. Акумулятор без прототипу коректно обробляє значення **proto** і constructor. Prettier також виправив форматування reduce.
+
+## 0.5.0
+
+Додано Logger, LogLevel, config і zod-валідацію .env. verbose не входить у літеральний тип; config.LOG_LEVEL сумісний без приведення типу. Збережено User і groupBy попереднього релізу. MINOR: новий клас і конфігурація; formatNumber бере точність із APP_PRECISION.
