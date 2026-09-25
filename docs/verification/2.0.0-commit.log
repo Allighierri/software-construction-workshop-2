@@ -1,0 +1,37 @@
+$ git commit -m feat!: change add signature to accept number[]
+
+> software-construction-workshop-2@1.0.0 lint
+> eslint . --ext .ts
+
+
+> software-construction-workshop-2@1.0.0 format:check
+> prettier --check .
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> software-construction-workshop-2@1.0.0 typecheck
+> tsc --noEmit
+
+[main 8a6bdad] feat!: change add signature to accept number[]
+ 22 files changed, 552 insertions(+), 4 deletions(-)
+ create mode 100644 docs/examples/2.0.0-before.ts.txt
+ create mode 100644 docs/verification/0.1.0-commit.log
+ create mode 100644 docs/verification/0.1.0-version.log
+ create mode 100644 docs/verification/0.2.0-commit.log
+ create mode 100644 docs/verification/0.2.0-version.log
+ create mode 100644 docs/verification/0.3.0-commit.log
+ create mode 100644 docs/verification/0.3.0-version.log
+ create mode 100644 docs/verification/0.4.0-commit.log
+ create mode 100644 docs/verification/0.4.0-version.log
+ create mode 100644 docs/verification/0.5.0-commit.log
+ create mode 100644 docs/verification/0.5.0-version.log
+ create mode 100644 docs/verification/1.0.0-commit.log
+ create mode 100644 docs/verification/1.0.0-version.log
+ create mode 100644 docs/verification/2.0.0-after.log
+ create mode 100644 docs/verification/2.0.0-before.log
+ create mode 100644 docs/verification/2.0.0-tests.log
+ create mode 100644 tests/smoke.cjs
+
+exit code: 0
+
